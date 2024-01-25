@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Maxime Munari</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="scripts/p5.min.js"></script>
+    <script src="redirect.js"></script>
+    <link rel="icon" href="images/favicon.svg" />
+    <script src="scripts/mathjax.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+
+  <header>
+    <div id="header-div">
+      <button onclick="navigateAndScroll('#main-section', 150)">home</button>
+      <button onclick="navigateAndScroll('#projects-section', 150)">projects</button>
+      <button onclick="navigateAndScroll('#about-section', 150)">about</button>
+    </div>
+  </header>
+
+  <body>
+    <section class="project-container">
+      <h1 class="project-title">The Mandelbrot Set</h1>
+      <hr class="project-hr" width="70%" />
+      <div class="project-text">
+        <h2 class="project-subtitle">What is the Mandelbrot Set?</h2>
+        <p class="project-text"></p>
+        <h2 class="project-subtitle">Plotting the Mandelbrot Set</h2>
+      </div>
+      <h2 class="project-subtitle">Simulation</h2>
+
+      <div id="project-animation-container">
+        <div class="project-animation" id="project-mandelbrot-animation"></div>
+        <div class="project-widgets" id="project-mandelbrot-widgets"></div>
+      </div>
+
+      <script src="scripts/mandelbrot.js"></script>
+
+      <h2 class="project-subtitle">References</h2>
+      <ul id="project-references">
+        <li>
+          <a href="https://en.wikipedia.org/wiki/Ising_model">[1] Wikipedia: Ising model</a>
+        </li>
+        <li>
+          <a href="http://www.damtp.cam.ac.uk/user/tong/statphys.html"
+            >[2] David Tong: Lectures on Statistical Physics</a
+          >
+        </li>
+        <li>
+          <a href="https://en.wikipedia.org/wiki/Glauber_dynamics">[3] Wikipedia: Glauber Dynamics</a>
+        </li>
+      </ul>
+    </section>
+  </body>
+
+  <hr width="70%" style="background-color: white; height: 1px; border: none" />
+  <footer>
+    <p>No Copyright</p>
+    <p>Made with &#9825; in HTML & CSS</p>
+  </footer>
+</html>
+

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <title>Maxime Munari</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="scripts/p5.min.js"></script>
+  <script src="redirect.js"></script>
+  <link rel="icon" href="images/favicon.svg">
+</head>
+
+<header>
+  <div id="header-div">
+    <button onclick="navigateAndScroll('#main-section', 150)">home</button>
+    <button onclick="navigateAndScroll('#projects-section', 150)">projects</button>
+    <button onclick="navigateAndScroll('#about-section', 150)">about</button>
+  </div>
+</header>
+
+<body>
+  
+  <section id="main-section">
+    <div id="background-animation"></div>
+    <div id="main-text">
+        <p id="text-top">Hi! My name is</p>
+        <p id="text-mid">Maxime munari</p>
+        <p id="text-down">I am something of a </br> physicist/programmer</p>
+    </div>
+    <script src="scripts/3-body.js"></script>
+    <img id="scroll-arrow" src="images/scroll_arrow.svg" alt="scroll-arrow">
+  </section>
+  
+  <hr width="70%"></hr>
+
+  <section id="projects-section">
+    <h1 class="section-title">Projects</h1>
+    <div class="projects-grid">
+        <div class="project-card" id="project-1" onclick="location.href = 'ising.html';">
+            <div class="project-card-container">
+                <div id="card-header">Ising Model</div>
+                <hr id="card-hr">
+                <div id="card-body">Simulate the 2D Ising Model using Glauber dynamics.</div>
+                <div id="card-footer"></div>
+            </div>
+        </div>
+        <div class="project-card" id="project-2" onclick="location.href = 'mandelbrot.html';">
+            <div class="project-card-container">
+                <div id="card-header">Mandelbrot Set</div>
+                <hr id="card-hr">
+                <div id="card-body">Explore the Mandelbrot set and its outstanding regions.</div>
+            </div>
+        </div>
+        <div class="project-card" id="project-3" onclick="location.href = 'fourier.html';">
+            <div class="project-card-container">
+                <div id="card-header">Draw with Fourier</div>
+                <hr id="card-hr">
+                <div id="card-body">Use Fourier Series to draw any shape in an original way. </div>
+            </div>
+        </div>
+        <div class="project-card" id="project-4" onclick="location.href = '';">
+            <div class="project-card-container">
+                <div id="card-header">Work In Progress &#x1F3D7;</div>
+                <hr id="card-hr">
+                <div id="card-body">Coming soon.</div>
+            </div>
+        </div>
+        <div class="project-card" id="project-5" onclick="location.href = '';">
+            <div class="project-card-container">
+                <div id="card-header">Work In Progress &#x1F3D7;</div>
+                <hr id="card-hr">
+                <div id="card-body">Coming soon.</div>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  
+  <hr width="70%"></hr>
+  
+  
+  <section id="about-section">
+    <h1 class="section-title">About me</h1>
+  </section>
+
+</body>
+
+<hr width="70%"></hr>
+
+
+<footer>
+  <p>No Copyright</p>
+  <p>Made with &#9825; in HTML & CSS</p>
+</footer>
+
+</html>
