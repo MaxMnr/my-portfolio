@@ -5,15 +5,15 @@
   <title>Maxime Munari</title>
   <link rel="stylesheet" href="style.css"/>
   <script src="scripts/p5.min.js"></script>
-  <script src="redirect.js"></script>
+  <script src="scroll.js"></script>
   <link rel="icon" href="images/favicon.svg">
 </head>
 
 <header>
   <div id="header-div">
-    <button onclick="navigateAndScroll('#main-section', 150)">home</button>
-    <button onclick="navigateAndScroll('#projects-section', 150)">projects</button>
-    <button onclick="navigateAndScroll('#about-section', 150)">about</button>
+    <button onclick="scrollToId('#main-section', 150)">home</button>
+    <button onclick="scrollToId('#projects-section', 150)">projects</button>
+    <button onclick="scrollToId('#about-section', 150)">about</button>
   </div>
 </header>
 
@@ -23,7 +23,7 @@
     <div id="background-animation"></div>
     <div id="main-text">
         <p id="text-top">Hi! My name is</p>
-        <p id="text-mid">Maxime munari</p>
+        <p id="text-mid">Maxime MUNARI</p>
         <p id="text-down">I am something of a </br> physicist/programmer</p>
     </div>
     <script src="scripts/3-body.js"></script>

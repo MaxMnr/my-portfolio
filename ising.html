@@ -55,7 +55,12 @@
             where $z$ is the number of nearest neighbors of a spin. The partition function is then given by:
             $$\mathcal{Z}=\sum_{\sigma_i=\pm 1}e^{-\beta\mathcal{H}}=2^N\cosh^N(\beta(h + zJm))$$
             where $\beta=\dfrac{1}{k_BT}$. The free-energy is then given by:
-            $$F=-k_BT\ln(\mathcal{Z})=-k_BT\ln(2^N\cosh^N(\beta(h + zJm)))=-Nk_BT\ln(2\cosh(\beta(h + zJm)))$$
+            $$
+            \begin{align}
+            F=-k_BT\ln(\mathcal{Z})&=-k_BT\ln(2^N\cosh^N(\beta(h + zJm)))\\
+            &=-Nk_BT\ln(2\cosh(\beta(h + zJm)))
+            \end{align} 
+            $$
             The magnetization can be express as a function of the free-energy:
             $$m=-\dfrac{1}{N}\dfrac{\partial F}{\partial h}=\tanh(\beta(h + zJm))$$
             If we consider that $h=0$ (no external magnetic field) we obtain:
@@ -67,7 +72,7 @@
             that the spins are aligned and the material is magnetic. Above $T_c$ the system is paramagnetic meaning that the spins are not aligned, there 
             is no magnetization and the material is not magnetic.
       </div>
-      <h2 class="project-subtitle">Simulation</h2>
+      <h2 class="project-subtitle">Simulation: 2D Ising Model</h2>
 
       <div id="project-animation-container">
         <div class="project-animation" id="project-ising-animation"></div>
@@ -95,7 +100,7 @@
 
   </body>
 
-  <hr width="70%" style="background-color: white; height: 1px; border: none" />
+  <hr width="70%" style="background-color: rgb(255, 255, 255); height: 1px; border: none" />
   <footer>
     <p>No Copyright</p>
     <p>Made with &#9825; in HTML & CSS</p>

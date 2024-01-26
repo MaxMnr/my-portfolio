@@ -29,7 +29,8 @@ function setup() {
 }
 
 function draw() {
-  background("#1e1f22");
+  background("#242629");
+  //background(0);
   translate(width / 2, height / 2);
   scale(1, -1);
 

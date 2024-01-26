@@ -7,7 +7,7 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
-  background-color: #1e1f22;
+  background-color: #242629;
   font-family: "Computer Modern";
   scroll-behavior: smooth;
   color: white;
@@ -39,6 +39,7 @@ header {
   width: 15%;
   min-width: 200px;
   height: 60%;
+  min-height: 40px;
   border-radius: 40pt;
   display: flex;
   justify-content: space-between;
@@ -111,6 +112,7 @@ footer {
 
 #text-mid {
   font-size: 24pt;
+  font-weight: bold;
   margin: 0;
   padding-bottom: 20px;
   -webkit-backdrop-filter: blur(4px);
@@ -147,14 +149,38 @@ footer {
 }
 .projects-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 20px 20px;
+  grid-template-columns: 1fr 1fr 1fr; /* Default: 3 columns */
+  grid-template-rows: auto; /* Adjusted for content */
+  gap: 30px;
   grid-auto-flow: row;
   grid-template-areas:
     "project-1 project-2 project-3"
-    "project-4 project-5 project-6"
-    ". . .";
+    "project-4 project-5 project-6";
+}
+
+/* For medium screens: Use 2 columns */
+@media screen and (max-width: 1150px) {
+  .projects-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "project-1 project-2"
+      "project-3 project-4"
+      "project-5 project-6";
+  }
+}
+
+/* For small screens: Use 1 column */
+@media screen and (max-width: 750px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "project-1"
+      "project-2"
+      "project-3"
+      "project-4"
+      "project-5"
+      "project-6";
+  }
 }
 
 #project-1 {
@@ -183,14 +209,24 @@ footer {
 
 .project-card {
   height: 40vh;
+  min-height: 300px;
+  max-height: 400px;
+  min-width: 250px;
+  max-width: 400px;
+
   border: solid 1px #ffffff;
-  border-radius: 10pt;
-  background-color: rgba(76, 70, 70, 0.94);
+  border-radius: 4pt;
+  background-color: #16161a;
 }
 
 .project-card:hover {
-  background-color: rgba(41, 40, 40, 0.559);
-  transition: 0.3s;
+  background-color: #7f5af0;
+  transition: 0.5s;
+  #card-header {
+    background-color: #7f5af0;
+    border-radius: 10px 10px 0 0;
+    color: #fffffe;
+  }
 }
 
 .project-card-container {
@@ -203,15 +239,15 @@ footer {
   align-items: center;
   font-size: 18pt;
   padding: 0px 20px;
-  background-color: rgba(0, 0, 63, 0);
+  color: #fffffe;
 }
 #card-body {
   height: 65%;
   display: flex;
   align-items: center;
-  font-size: 12pt;
+  font-size: 14pt;
   padding: 0px 20px;
-  background-color: rgba(139, 69, 19, 0);
+  color: #94a1b2;
 }
 #card-hr {
   height: 1px;
@@ -245,8 +281,8 @@ footer {
 }
 .project-title {
   font-size: 26pt;
-  margin: 0;
-  padding: 0;
+  margin: 0 0 40px 0;
+  padding: 0 10px;
   color: white;
   display: flex;
   justify-content: center;
@@ -255,7 +291,7 @@ footer {
 
 .project-subtitle {
   font-size: 18pt;
-  margin: 0;
+  margin: 10px 0;
   padding: 0;
   color: white;
   padding: 20px 0;
@@ -277,6 +313,7 @@ footer {
 .project-animation {
   border: 1px solid white;
   border-radius: 10pt;
+  margin-bottom: 10pt;
 }
 canvas {
   border-radius: 10pt;
@@ -292,14 +329,17 @@ canvas {
   list-style-type: none;
   margin: 30px 0px;
 }
+
 #project-references a {
   color: white;
   text-decoration: none;
 }
+
 #project-references a:hover {
   color: rgb(246, 112, 112);
   text-decoration: none;
 }
+
 ul {
   padding: 0;
 }
