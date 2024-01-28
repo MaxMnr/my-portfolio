@@ -1,29 +1,66 @@
-let res = 10;
+let res;
 
 let spins = [-1, 1];
 let grid = [];
 let row, col;
 
+let sliderRes;
 let sliderTemp;
 let T;
-let run = 1;
+let run = 0;
 
 function setup() {
-  let can = createCanvas(500, 500);
+  let can = createCanvas(windowHeight * 0.8, windowHeight * 0.8);
   can.parent("project-ising-animation");
 
-  buttonStart = createButton("Start").mousePressed(() => (run = (run + 1) % 2));
+  buttonStart = createButton("Start").mousePressed(startB);
   buttonReset = createButton("Reset").mousePressed(reset);
-  sliderTemp = createSlider(0.01, 10, 1, 0.1);
+  sliderTemp = createSlider(0.1, 5, 2.27, 0.01);
+  sliderRes = createSlider(10, 100, 20, 1);
+
+  tempText = createDiv("");
+  resText = createDiv("");
 
   buttonStart.parent("project-ising-widgets");
   buttonReset.parent("project-ising-widgets");
   sliderTemp.parent("project-ising-widgets");
+  tempText.parent("project-ising-widgets");
+  sliderRes.parent("project-ising-widgets");
+  resText.parent("project-ising-widgets");
+
+  buttonStart.addClass("button");
+  buttonReset.addClass("button");
+  sliderTemp.addClass("slider");
+  tempText.addClass("text");
+  sliderRes.addClass("slider");
+  resText.addClass("text");
 
   frameRate(20);
-
-  col = width / res;
-  row = height / res;
+  res = int(sliderRes.value());
+  col = res;
+  row = res;
+  grid = [];
+  for (let i = 0; i < row + 1; i++) {
+    let new_row = [];
+    for (let j = 0; j < col + 1; j++) {
+      new_row.push(spins[int(random(2))]);
+    }
+    grid.push(new_row);
+  }
+}
+function startB() {
+  run = (run + 1) % 2;
+  if (run % 2 == 1) {
+    buttonStart.html("Stop");
+  } else {
+    buttonStart.html("Start");
+  }
+}
+function resetup() {
+  grid = [];
+  res = sliderRes.value();
+  col = res;
+  row = res;
 
   for (let i = 0; i < row + 1; i++) {
     let new_row = [];
@@ -33,18 +70,37 @@ function setup() {
     grid.push(new_row);
   }
 }
-
 function draw() {
   background(0);
 
   T = sliderTemp.value();
+  tempText.html(
+    '<span style="color: #fffffe;">' +
+      "Temperature: " +
+      "</span>" +
+      '<span style="color: #7f5af0;">' +
+      str(T) +
+      "</span>"
+  );
+  resText.html(
+    '<span style="color: #fffffe;">' +
+      "Grid Size: " +
+      "</span>" +
+      '<span style="color: #7f5af0;">' +
+      str(res) +
+      "</span>"
+  );
+
+  if (int(sliderRes.value()) != int(res)) {
+    res = sliderRes.value();
+    resetup();
+  }
 
   if (run == 1) {
     //Simulate the evolution of the system using Glauber Dynamics
     for (let i = 0; i < grid.length * grid[0].length; i++) {
       let x = int(random(grid[0].length));
       let y = int(random(grid.length));
-      let part = grid[y][x];
       let S =
         grid[y][mod(x + 1, grid[0].length)] +
         grid[y][mod(x - 1, grid[0].length)] +
@@ -59,19 +115,21 @@ function draw() {
   }
 
   //Display the grid using Marching Squares
+  let w = width / col;
+  let h = height / row;
   for (let i = 0; i < row + 1; i++) {
     for (let j = 0; j < col + 1; j++) {
       push();
       strokeWeight(1);
       if (grid[i][j] == -1) {
-        stroke("blue");
+        stroke("#7f5af0");
         noFill();
-        circle(j * res, i * res, res / 2);
-        point(j * res, i * res);
+        circle(j * w, i * h, w / 2);
+        point(j * w, i * h);
       }
       if (grid[i][j] == 1) {
-        stroke("red");
-        cross(j * res, i * res, res / 2);
+        stroke("#2cb67d");
+        cross(j * w, i * h, w / 2);
       }
       //point(j * res + res/2, i * res + res/2)
       pop();
@@ -83,10 +141,10 @@ function draw() {
 
       let squareType = getSquareType(TL, TR, DR, DL);
 
-      let a = createVector(j * res + res / 2, i * res);
-      let b = createVector(j * res + res, i * res + res / 2);
-      let c = createVector(j * res + res / 2, i * res + res);
-      let d = createVector(j * res, i * res + res / 2);
+      let a = createVector(j * w + w / 2, i * h);
+      let b = createVector(j * w + w, i * h + h / 2);
+      let c = createVector(j * w + w / 2, i * h + h);
+      let d = createVector(j * w, i * h + h / 2);
 
       stroke("white");
       switch (squareType) {
@@ -141,6 +199,11 @@ function draw() {
       }
     }
   }
+}
+
+function windowResized() {
+  resizeCanvas(windowHeight * 0.8, windowHeight * 0.8);
+  resetup();
 }
 
 function reset() {

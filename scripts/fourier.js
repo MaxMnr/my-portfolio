@@ -17,14 +17,26 @@ function setup() {
   buttonReset = createButton("RESET").mousePressed(reset);
   sliderSpeed = createSlider(1, 60, 40, 1);
   sliderNbrCircles = createSlider(1, 2, 2, 1);
+
+  speedText = createDiv("");
+
+  circleText = createDiv("");
+
   buttonRun.parent("project-fourier-widgets");
   buttonReset.parent("project-fourier-widgets");
   sliderSpeed.parent("project-fourier-widgets");
+
+  speedText.parent("project-fourier-widgets");
   sliderNbrCircles.parent("project-fourier-widgets");
+
+  circleText.parent("project-fourier-widgets");
+
   buttonRun.addClass("button");
   buttonReset.addClass("button");
   sliderSpeed.addClass("slider");
+  speedText.addClass("text");
   sliderNbrCircles.addClass("slider");
+  circleText.addClass("text");
 
   init();
 }
@@ -32,6 +44,24 @@ function setup() {
 function draw() {
   background(0);
   frameRate(sliderSpeed.value());
+
+  speedText.html(
+    '<span style="color: #fffffe;">' +
+      "Speed (fps):" +
+      "</span>" +
+      '<span style="color: #7f5af0;">' +
+      str(sliderSpeed.value()) +
+      "</span>"
+  );
+
+  circleText.html(
+    '<span style="color: #fffffe;">' +
+      "Number of Circles: " +
+      "</span>" +
+      '<span style="color: #7f5af0;">' +
+      str(sliderNbrCircles.value()) +
+      "</span>"
+  );
 
   if (!run) {
     if (points.length == 0) {
@@ -108,6 +138,10 @@ function draw() {
     }
     time += (2 * PI) / points.length;
   }
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth * 0.5, windowHeight * 0.7);
 }
 
 function mousePressed() {

@@ -14,3 +14,20 @@ function scrollToId(targetId, offset) {
   }
 }
 
+function navigateAndScroll(targetPage, targetId, offset) {
+  window.location.href = targetPage + targetId + "_" + offset;
+}
+
+window.addEventListener("load", () => {
+  const hash = window.location.hash;
+  console.log(hash);
+  if (hash.includes("#")) {
+    // Extract the targetId and offset from the hash
+    const params = hash.split("_");
+    const targetId = params[0];
+    const offset = parseInt(params[1], 10);
+    // Call scrollToId function with extracted parameters
+    scrollToId(targetId, offset);
+  }
+});
+

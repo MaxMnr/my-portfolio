@@ -4,7 +4,7 @@
     <title>Maxime Munari</title>
     <link rel="stylesheet" href="style.css" />
     <script src="scripts/p5.min.js"></script>
-    <script src="redirect.js"></script>
+    <script src="scroll.js"></script>
     <link rel="icon" href="images/favicon.svg" />
     <script src="scripts/mathjax.js"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -12,9 +12,9 @@
 
   <header>
     <div id="header-div">
-      <button onclick="navigateAndScroll('#main-section', 150)">home</button>
-      <button onclick="navigateAndScroll('#projects-section', 150)">projects</button>
-      <button onclick="navigateAndScroll('#about-section', 150)">about</button>
+      <button onclick="navigateAndScroll('index.html', '#main-section', 150)">home</button>
+      <button onclick="navigateAndScroll('index.html', '#projects-section', 150)">projects</button>
+      <button onclick="navigateAndScroll('index.html', '#about-section', 150)">about</button>
     </div>
   </header>
 

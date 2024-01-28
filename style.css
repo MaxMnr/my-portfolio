@@ -2,12 +2,17 @@
   font-family: "Computer Modern"; /* Name your font */
   src: url("cmunorm.ttf") format("truetype");
 }
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 html,
 body {
   width: 100%;
   margin: 0;
   padding: 0;
-  background-color: #242629;
+  background-color: #16161a;
   font-family: "Computer Modern";
   scroll-behavior: smooth;
   color: white;
@@ -62,7 +67,7 @@ header {
 }
 
 #header-div button:hover {
-  color: rgb(81, 81, 81);
+  color: #7f5af0;
   transition: 0.3s;
 }
 
@@ -156,6 +161,7 @@ footer {
   grid-template-areas:
     "project-1 project-2 project-3"
     "project-4 project-5 project-6";
+  margin: 0 0 5% 0%;
 }
 
 /* For medium screens: Use 2 columns */
@@ -220,12 +226,15 @@ footer {
 }
 
 .project-card:hover {
-  background-color: #7f5af0;
-  transition: 0.5s;
   #card-header {
     background-color: #7f5af0;
-    border-radius: 10px 10px 0 0;
+    border-radius: 4px 4px 0 0;
     color: #fffffe;
+    transition: 0.5s ease-in-out;
+  }
+  #card-body {
+    color: #fffffe;
+    transition: 0.5s ease-in-out;
   }
 }
 
@@ -283,7 +292,7 @@ footer {
   font-size: 26pt;
   margin: 0 0 40px 0;
   padding: 0 10px;
-  color: white;
+  color: #fffffe;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -293,23 +302,36 @@ footer {
   font-size: 18pt;
   margin: 10px 0;
   padding: 0;
-  color: white;
+  color: #fffffe;
   padding: 20px 0;
 }
 
 .project-text {
-  font-size: 12pt;
+  font-size: 13pt;
   margin: 0;
   padding: 0;
-  color: white;
+  color: #94a1b2;
 }
 #project-animation-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+
   padding: 20px 0;
 }
+@media screen and (max-width: 800px) {
+  #project-animation-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px 0;
+  }
+  .project-widgets {
+    width: 200px;
+  }
+}
+
 .project-animation {
   border: 1px solid white;
   border-radius: 10pt;
@@ -320,9 +342,14 @@ canvas {
 }
 
 .project-widgets {
+  display: flex;
+  justify-content: top;
+  align-items: center;
+  flex-direction: column;
   border: 1px solid white;
   border-radius: 4pt;
   padding: 10px;
+  margin: 10px 10px;
 }
 
 #project-references {
@@ -331,16 +358,58 @@ canvas {
 }
 
 #project-references a {
-  color: white;
+  color: #94a1b2;
   text-decoration: none;
 }
 
 #project-references a:hover {
-  color: rgb(246, 112, 112);
+  color: #7f5af0;
   text-decoration: none;
 }
 
 ul {
   padding: 0;
+}
+
+/* -------- WIDGETS ---------*/
+
+.button {
+  width: 80%;
+  border: none;
+  border-radius: 4pt;
+  padding: 10px;
+  margin: 10px;
+  background-color: #7f5af0;
+  color: white;
+  font-size: 12pt;
+  font-family: "Computer Modern";
+  cursor: pointer;
+}
+.button:hover {
+  background-color: #4f2f90;
+  transition: 0.3s;
+}
+
+.slider {
+  height: 5px;
+  border-radius: 10px;
+  -webkit-appearance: none;
+  margin: 10px 0;
+  width: 90%;
+  background-color: #fffffe;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #7f5af0;
+  cursor: pointer;
+}
+.slider::-webkit-slider-thumb:hover {
+  background-color: #4f2f90;
+  transition: 0.3s;
 }
 
