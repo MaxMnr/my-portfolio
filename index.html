@@ -12,21 +12,21 @@
     <header>
       <div class="navbar">
         <ul class="links">
-          <li><a href="#main-section">Home</a></li>
-          <li><a href="#hr-projects">Projects</a></li>
-          <li><a href="#hr-about">About</a></li>
+          <li><a href="#main-anchor">Home</a></li>
+          <li><a href="#projects-anchor">Projects</a></li>
+          <li><a href="#about-anchor">About</a></li>
         </ul>
         <div class="toggle-button">\/</div>
       </div>
       <div class="dropdown-menu">
-        <li><a href="#main-section">Home</a></li>
-        <li><a href="#projects-section">Projects</a></li>
-        <li><a href="#about-section">About</a></li>
+        <li><a href="#main-anchor">Home</a></li>
+        <li><a href="#projects-anchor">Projects</a></li>
+        <li><a href="#about-anchor">About</a></li>
       </div>
     </header>
     <script src="navbar.js"></script>
 
-    <section class="main-section">
+    <section class="main-section" id="main-anchor">
         <div id="background-animation"></div>
         <div id="main-text">
             <p id="text-top">Hi! My name is</p>
@@ -34,10 +34,16 @@
             <p id="text-down">I am something of a </br> physicist/programmer</p>
         </div>
         <script src="scripts/3-body.js"></script>
+
+        <div class="scroll-down">
+            <a href="#projects-anchor">
+                <div class="scroll-down-text">&#x2193; Scroll &#x2193;</div>
+            </a>
+        </div>
     </section>
 
 
-    <section class="projects-section">
+    <section class="projects-section" id="projects-anchor">
         <h1 class="section-title">Projects</h1>
         <div class="projects-grid">
             <div class="projects-card" id="project-1">
@@ -67,19 +73,29 @@
 
 
 
-    <section class="about-section">
+    <section class="about-section" id="about-anchor">
         <h1 class="section-title">About me</h1>
         <h2 class="subsection-title">Education</h2>
         <div class="university-grid">
-            <div class="university-card" id="university-1">                
-                <div class="university-card-title">University of Grenoble-Alpes</div>
-                <div class="university-card-description">BSc in Physics (Research Track)</div>
-                <div class="university-card-footer">2020-2023</div>
+            <div class="university-card" id="university-1"> 
+                <div id="university-card-container-text">             
+                    <div class="university-card-title">University Grenoble-Alpes</div>
+                    <div class="university-card-description">BSc in Physics (Research Track)</div>
+                    <div class="university-card-footer">2020-2023</div>
+                </div> 
+                <div id="university-card-container-image">
+                    <img src="images/logos/logo_uga.svg" alt="UGA-logo" id="uga-logo" style="width: 120px;"> 
+                </div>
             </div>
-            <div class="university-card" id="university-2">                
-                <div class="university-card-title">University of Strasbourg</div>
-                <div class="university-card-description">MSc in Physics (Theoretical Track) </div>
-                <div class="university-card-footer">2023-??</div>
+            <div class="university-card" id="university-2"> 
+                <div id="university-card-container-text">             
+                    <div class="university-card-title">University of Strasbourg</div>
+                    <div class="university-card-description">MSc in Physics (Theoretical Track)</div>
+                    <div class="university-card-footer">2023-today</div>
+                </div> 
+                <div id="university-card-container-image">
+                    <img src="images/logos/logo_unistra.svg" alt="UNISTRA-logo" id="unistra-logo" style="height: 60px;"> 
+                </div>
             </div>
         </div>
 
@@ -88,12 +104,12 @@
             <div class="experiences-card" id="experiences-1">                
                 <div class="experiences-card-title">Internship at LAM</div>
                 <div class="experiences-card-description">Shortly describe</div>
-                <div class="experiences-card-footer">Summer 2021</div>
+                <div class="experiences-card-footer">June-July 2021</div>
             </div>
             <div class="experiences-card" id="experiences-2">                
                 <div class="experiences-card-title">Internship at IPHC</div>
                 <div class="experiences-card-description">Shortly describe </div>
-                <div class="experiences-card-footer">Spring 2024</div>
+                <div class="experiences-card-footer">January-April 2024</div>
             </div>
         </div>
 

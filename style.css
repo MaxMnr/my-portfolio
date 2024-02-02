@@ -212,6 +212,29 @@ section {
   margin: 0;
 }
 
+.scroll-down {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  bottom: 0;
+  margin: 40px;
+  position: absolute;
+  animation: floatArrow 2s ease-in-out infinite;
+}
+
+#scroll-down-text {
+}
+
+@keyframes floatArrow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+}
 /* ------------ PROJECTS SECTION ------------*/
 
 .projects-section {
@@ -352,13 +375,24 @@ section {
   padding: 10px var(--section-padding-h);
   border-radius: 2pt;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
+  align-items: center;
   gap: 2rem;
   align-items: left;
   height: 200px;
   border: 3px solid #000;
 }
+
+#university-card-container-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+}
+#university-card-container-image {
+}
+
 .university-card-title {
   color: var(--card_headline);
   font-size: var(--subtitle-font-size);
@@ -437,12 +471,28 @@ section {
   }
 }
 
-@media (max-width: 800px) {
+/* ------------ RESPONSIVE GRID ------------*/
+@media (max-width: 1000px) {
+  #university-card-container-image {
+    scale: 0.8;
+  }
+  #university-card-container-text {
+    scale: 0.8;
+  }
+  .university-card {
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 700px) {
   .university-grid {
     grid-template-columns: 1fr; /* 1 column */
     grid-template-areas:
       "university-1"
       "university-2";
+  }
+  .university-card {
+    flex-direction: column;
   }
   .experiences-grid {
     grid-template-columns: 1fr; /* 1 column */
@@ -461,5 +511,15 @@ footer {
   color: white;
   padding: 0 10% 0 10%;
   margin: 4px;
+}
+
+/* ------------ RESPONSIVE FOOTER ------------*/
+
+@media (max-width: 800px) {
+  footer {
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+  }
 }
 
