@@ -209,10 +209,29 @@ function mousePressed() {
 function mouseReleased() {
   if (mouseOnCanvas() && mouse.len > 10) {
     mouse.down = false;
+
+    // Calculate selected area dimensions
+    let selectedWidth = Math.abs(mouse.len);
+    let selectedHeight = Math.abs(mouse.len);
+
+    // Aspect ratio of the canvas
+    let aspectRatio = width / height;
+
+    // Adjust the selected area to maintain aspect ratio
+    if (selectedWidth / selectedHeight > aspectRatio) {
+      // Width is too large for the height
+      selectedWidth = selectedHeight * aspectRatio;
+    } else {
+      // Height is too large for the width
+      selectedHeight = selectedWidth / aspectRatio;
+    }
+
+    // Calculate new boundaries
     let xmin = map(mouse.x, 0, width, mandelbrot.xBounds[0], mandelbrot.xBounds[1]);
-    let xmax = map(mouse.x + mouse.len, 0, width, mandelbrot.xBounds[0], mandelbrot.xBounds[1]);
     let ymin = map(mouse.y, 0, height, mandelbrot.yBounds[0], mandelbrot.yBounds[1]);
-    let ymax = map(mouse.y + mouse.len, 0, height, mandelbrot.yBounds[0], mandelbrot.yBounds[1]);
+    let xmax = map(mouse.x + selectedWidth, 0, width, mandelbrot.xBounds[0], mandelbrot.xBounds[1]);
+    let ymax = map(mouse.y + selectedHeight, 0, height, mandelbrot.yBounds[0], mandelbrot.yBounds[1]);
+
     mandelbrot.xBounds = [min(xmin, xmax), max(xmin, xmax)];
     mandelbrot.yBounds = [min(ymin, ymax), max(ymin, ymax)];
     mandelbrot.boundsSave.push([mandelbrot.xBounds, mandelbrot.yBounds]);

@@ -12,8 +12,8 @@
 <header>
   <div id="header-div">
     <button onclick="scrollToId('#main-section', 150)">home</button>
-    <button onclick="scrollToId('#projects-section', 100)">projects</button>
-    <button onclick="scrollToId('#about-section', 150)">about</button>
+    <button onclick="scrollToId('#hr-projects', 0)">projects</button>
+    <button onclick="scrollToId('#hr-about', 150)">about</button>
   </div>
 </header>
 
@@ -30,7 +30,7 @@
     <img id="scroll-arrow" src="images/scroll_arrow.svg" alt="scroll-arrow" onclick="scrollToId('#projects-section', 150)">
   </section>
   
-  <hr width="70%"></hr>
+  <hr width="70%" id="hr-projects"></hr>
 
   <section id="projects-section">
     <h1 class="section-title">Projects</h1>
@@ -38,36 +38,30 @@
         <div class="project-card" id="project-1" onclick="location.href = 'ising.html';">
             <div class="project-card-container">
                 <div id="card-header">Ising Model</div>
-                <hr id="card-hr">
                 <div id="card-body">Simulate the 2D Ising Model using Glauber dynamics.</div>
-                <div id="card-footer"></div>
             </div>
         </div>
         <div class="project-card" id="project-2" onclick="location.href = 'mandelbrot.html';">
             <div class="project-card-container">
                 <div id="card-header">Mandelbrot Set</div>
-                <hr id="card-hr">
                 <div id="card-body">Explore the Mandelbrot set and its outstanding regions.</div>
             </div>
         </div>
         <div class="project-card" id="project-3" onclick="location.href = 'fourier.html';">
             <div class="project-card-container">
                 <div id="card-header">Draw with Fourier</div>
-                <hr id="card-hr">
                 <div id="card-body">Use Fourier Series to draw any shape in an original way. </div>
             </div>
         </div>
         <div class="project-card" id="project-4" onclick="location.href = '';">
             <div class="project-card-container">
                 <div id="card-header">Work In Progress &#x1F3D7;</div>
-                <hr id="card-hr">
                 <div id="card-body">Coming soon.</div>
             </div>
         </div>
         <div class="project-card" id="project-5" onclick="location.href = '';">
             <div class="project-card-container">
                 <div id="card-header">Work In Progress &#x1F3D7;</div>
-                <hr id="card-hr">
                 <div id="card-body">Coming soon.</div>
             </div>
         </div>
@@ -75,7 +69,7 @@
   </section>
 
   
-  <hr width="70%"></hr>
+  <hr width="70%" id="hr-about"></hr>
   
   
   <section id="about-section">
@@ -89,7 +83,8 @@
 
 <footer>
   <p>No Copyright</p>
-  <p>Made with &#9825; in HTML & CSS</p>
+  <p id="emoji">Made with &#9825; in HTML & CSS</p>
+  <audio id="music" src="portal.mp3"></audio>
 </footer>
 
 </html>
