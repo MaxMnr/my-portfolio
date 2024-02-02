@@ -383,6 +383,7 @@ section {
   grid-template-areas: "experiences-1 experiences-2";
   padding: 0 var(--section-padding-h);
   padding-bottom: 60px;
+  margin: 0;
 }
 #experiences-1 {
   grid-area: experiences-1;
@@ -433,6 +434,21 @@ section {
   .experiences-card-footer {
     color: var(--card_paragraph);
     transition: 0.5s ease-in-out;
+  }
+}
+
+@media (max-width: 800px) {
+  .university-grid {
+    grid-template-columns: 1fr; /* 1 column */
+    grid-template-areas:
+      "university-1"
+      "university-2";
+  }
+  .experiences-grid {
+    grid-template-columns: 1fr; /* 1 column */
+    grid-template-areas:
+      "experiences-1"
+      "experiences-2";
   }
 }
 
