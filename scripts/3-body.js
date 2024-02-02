@@ -17,7 +17,7 @@ let colors = [
 //let cam;
 
 function setup() {
-  let can = createCanvas(windowWidth, windowHeight, WEBGL);
+  let can = createCanvas(windowWidth * 0.99, windowHeight, WEBGL);
   can.parent("background-animation");
   //axis = new Axis();
   //cam = new Camera();

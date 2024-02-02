@@ -1,90 +1,109 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
+  <head>
+    <title>Maxime Munari</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="scripts/p5.min.js"></script>
+  </head>
 
-<head>
-  <title>Maxime Munari</title>
-  <link rel="stylesheet" href="style.css"/>
-  <script src="scripts/p5.min.js"></script>
-  <script src="scroll.js"></script>
-  <link rel="icon" href="images/favicon.svg">
-</head>
+  <body>
+    <header>
+      <div class="navbar">
+        <ul class="links">
+          <li><a href="#main-section">Home</a></li>
+          <li><a href="#hr-projects">Projects</a></li>
+          <li><a href="#hr-about">About</a></li>
+        </ul>
+        <div class="toggle-button">\/</div>
+      </div>
+      <div class="dropdown-menu">
+        <li><a href="#main-section">Home</a></li>
+        <li><a href="#projects-section">Projects</a></li>
+        <li><a href="#about-section">About</a></li>
+      </div>
+    </header>
+    <script src="navbar.js"></script>
 
-<header>
-  <div id="header-div">
-    <button onclick="scrollToId('#main-section', 150)">home</button>
-    <button onclick="scrollToId('#hr-projects', 0)">projects</button>
-    <button onclick="scrollToId('#hr-about', 150)">about</button>
-  </div>
-</header>
+    <section class="main-section">
+        <div id="background-animation"></div>
+        <div id="main-text">
+            <p id="text-top">Hi! My name is</p>
+            <p id="text-mid">Maxime MUNARI</p>
+            <p id="text-down">I am something of a </br> physicist/programmer</p>
+        </div>
+        <script src="scripts/3-body.js"></script>
+    </section>
 
-<body>
-  
-  <section id="main-section">
-    <div id="background-animation"></div>
-    <div id="main-text">
-        <p id="text-top">Hi! My name is</p>
-        <p id="text-mid">Maxime MUNARI</p>
-        <p id="text-down">I am something of a </br> physicist/programmer</p>
-    </div>
-    <script src="scripts/3-body.js"></script>
-    <img id="scroll-arrow" src="images/scroll_arrow.svg" alt="scroll-arrow" onclick="scrollToId('#projects-section', 150)">
-  </section>
-  
-  <hr width="70%" id="hr-projects"></hr>
 
-  <section id="projects-section">
-    <h1 class="section-title">Projects</h1>
-    <div class="projects-grid">
-        <div class="project-card" id="project-1" onclick="location.href = 'ising.html';">
-            <div class="project-card-container">
-                <div id="card-header">Ising Model</div>
-                <div id="card-body">Simulate the 2D Ising Model using Glauber dynamics.</div>
+    <section class="projects-section">
+        <h1 class="section-title">Projects</h1>
+        <div class="projects-grid">
+            <div class="projects-card" id="project-1">
+                <div class="projects-card-title">Title</div>
+                <div class="projects-card-description">A short description</div>
+                <div class="projects-card-footer">footer</div>
+            </div>
+            <div class="projects-card" id="project-2">
+                <div class="projects-card-title">Title</div>
+                <div class="projects-card-description">A short description</div>
+                <div class="projects-card-footer">footer</div>
+            </div>
+            <div class="projects-card" id="project-3">                
+                <div class="projects-card-title">Title</div>
+                <div class="projects-card-description">A short description</div>
+                <div class="projects-card-footer">footer</div>
+            </div>
+            <div class="projects-card" id="project-4">                
+                <div class="projects-card-title">Title</div>
+                <div class="projects-card-description">A short description</div>
+                <div class="projects-card-footer">footer</div>
+            </div>
+    
+        </div>
+
+    </section>
+
+
+
+    <section class="about-section">
+        <h1 class="section-title">About me</h1>
+        <h2 class="subsection-title">Education</h2>
+        <div class="university-grid">
+            <div class="university-card" id="university-1">                
+                <div class="university-card-title">University of Grenoble-Alpes</div>
+                <div class="university-card-description">BSc in Physics (Research Track)</div>
+                <div class="university-card-footer">2020-2023</div>
+            </div>
+            <div class="university-card" id="university-2">                
+                <div class="university-card-title">University of Strasbourg</div>
+                <div class="university-card-description">MSc in Physics (Theoretical Track) </div>
+                <div class="university-card-footer">2023-??</div>
             </div>
         </div>
-        <div class="project-card" id="project-2" onclick="location.href = 'mandelbrot.html';">
-            <div class="project-card-container">
-                <div id="card-header">Mandelbrot Set</div>
-                <div id="card-body">Explore the Mandelbrot set and its outstanding regions.</div>
+
+        <h2 class="subsection-title">Experiences</h2>
+        <div class="experiences-grid"></div>
+        <div class="experiences-grid">
+            <div class="experiences-card" id="experiences-1">                
+                <div class="experiences-card-title">Internship at LAM</div>
+                <div class="experiences-card-description">Shortly describe</div>
+                <div class="experiences-card-footer">Summer 2021</div>
+            </div>
+            <div class="experiences-card" id="experiences-2">                
+                <div class="experiences-card-title">Internship at IPHC</div>
+                <div class="experiences-card-description">Shortly describe </div>
+                <div class="experiences-card-footer">Spring 2024</div>
             </div>
         </div>
-        <div class="project-card" id="project-3" onclick="location.href = 'fourier.html';">
-            <div class="project-card-container">
-                <div id="card-header">Draw with Fourier</div>
-                <div id="card-body">Use Fourier Series to draw any shape in an original way. </div>
-            </div>
-        </div>
-        <div class="project-card" id="project-4" onclick="location.href = '';">
-            <div class="project-card-container">
-                <div id="card-header">Work In Progress &#x1F3D7;</div>
-                <div id="card-body">Coming soon.</div>
-            </div>
-        </div>
-        <div class="project-card" id="project-5" onclick="location.href = '';">
-            <div class="project-card-container">
-                <div id="card-header">Work In Progress &#x1F3D7;</div>
-                <div id="card-body">Coming soon.</div>
-            </div>
-        </div>
-    </div>
-  </section>
 
-  
-  <hr width="70%" id="hr-about"></hr>
-  
-  
-  <section id="about-section">
-    <h1 class="section-title">About me</h1>
-  </section>
+    </section>
 
-</body>
+    <footer>
+        <p>No Copyright</p>
+        <p id="emoji">Made with &#9825; in HTML & CSS</p>
+        <audio id="music" src="portal.mp3"></audio>
+    </footer>
 
-<hr width="70%"></hr>
-
-
-<footer>
-  <p>No Copyright</p>
-  <p id="emoji">Made with &#9825; in HTML & CSS</p>
-  <audio id="music" src="portal.mp3"></audio>
-</footer>
-
+  </body>
 </html>
+
