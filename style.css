@@ -86,42 +86,84 @@ header {
 }
 
 header .toggle-button {
-  width: 300px;
+  width: 50px;
   height: 50px;
-  padding: 0;
-  background-color: salmon;
+
+  background-color: #35353c21;
   display: none;
-  color: #fffffe;
+  border-radius: 50pt;
+  padding: 4px;
+  transition: all 0.5s ease;
   cursor: pointer;
+}
+.header .toggle-button:hover {
+  background-color: rgb(193, 57, 33);
 }
 
 /* ------------ DROPDOWN MENU ------------*/
+#menu-icon {
+  width: 40px;
+  border-radius: 50pt;
+  transition: all 0.5s ease-in;
+  padding: 0;
+}
+#menu-icon:hover {
+}
+#menu-icon.open {
+  opacity: 0;
+  visibility: hidden;
+}
 
 .dropdown-menu {
-  display: none;
-  background-color: rgb(50, 50, 201);
   backdrop-filter: blur(10px);
   overflow: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  height: 0;
+  opacity: 0;
 
-  height: 0px;
-  transition: 4s ease-in-out;
+  display: flex;
+  justify-content: right;
+  transition: all 0.3s ease-in-out; /* Adjust timing as needed */
 }
 
 .dropdown-menu.open {
-  display: flex;
-  flex-direction: column;
   gap: 1rem;
-  padding: 30px 0;
   width: 100%;
   height: 200px;
+  opacity: 1;
+  visibility: visible;
 }
-.dropdown-menu li {
-  display: none;
-}
-.dropdown-menu.open li {
+
+.container-menu {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  border: #000 2px solid;
+  background-color: var(--card_background-1);
+  gap: 0.2rem;
+  width: 20%;
+  height: 90%;
+  margin-right: 10px;
+  border-radius: 2pt;
+
+  background-color: var(--card_background-1);
+}
+#container-title {
+  color: var(--tertiary);
+  font-size: var(--subtitle-font-size);
+  padding: 10px;
+  margin: 0;
+}
+
+.dropdown-menu li {
+  display: grid;
+  padding: 10px;
+}
+.dropdown-menu.open li {
+  font-size: 12pt;
 }
 
 /* ------------ RESPONSIVE NAVBAR ------------*/
@@ -130,10 +172,13 @@ header .toggle-button {
   .navbar .links {
     display: none;
   }
+  .navbar {
+    justify-content: right;
+  }
   .navbar .toggle-button {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: right;
     font-size: 20pt;
   }
 }

@@ -3,8 +3,14 @@ const dropDownMenu = document.querySelector(".dropdown-menu");
 
 toggleBtn.onclick = function () {
   dropDownMenu.classList.toggle("open");
+
   const isOpen = dropDownMenu.classList.contains("open");
+
   toggleBtn.classList = isOpen ? "toggle-button open" : "toggle-button";
+
+  const menuIcon = document.getElementById("menu-icon");
+
+  menuIcon.src = isOpen ? "images/logos/cross.svg" : "images/logos/hamburger.svg";
 };
 
 document.addEventListener("DOMContentLoaded", (event) => {
