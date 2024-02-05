@@ -69,7 +69,6 @@ header {
   justify-content: center;
   align-items: center;
 }
-
 .navbar .links {
   width: 300px;
   height: 50px;
@@ -83,6 +82,7 @@ header {
 
   background-color: #35353c20;
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 header .toggle-button {
@@ -145,6 +145,7 @@ header .toggle-button {
   background-color: var(--card_background-1);
   gap: 0.2rem;
   width: 20%;
+  min-width: 150px;
   height: 90%;
   margin-right: 10px;
   border-radius: 2pt;
@@ -236,6 +237,7 @@ section {
   color: var(--card_headline);
   background-color: #3e3e4500;
   backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(5px);
   padding: 10px;
   margin: 10px;
   border-radius: 2pt;
@@ -519,17 +521,20 @@ section {
 /* ------------ RESPONSIVE GRID ------------*/
 @media (max-width: 1000px) {
   #university-card-container-image {
-    scale: 0.8;
   }
   #university-card-container-text {
-    scale: 0.8;
+  }
+  .university-card-title {
+    font-size: 16pt;
   }
   .university-card {
-    gap: 0.5rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   .university-grid {
     grid-template-columns: 1fr; /* 1 column */
     grid-template-areas:
@@ -537,13 +542,22 @@ section {
       "university-2";
   }
   .university-card {
-    flex-direction: column;
   }
   .experiences-grid {
     grid-template-columns: 1fr; /* 1 column */
     grid-template-areas:
       "experiences-1"
       "experiences-2";
+  }
+  #university-card-container-image {
+    scale: 0.9;
+  }
+  #university-card-container-text {
+    scale: 0.9;
+  }
+  .university-card {
+    min-width: 250px;
+    margin: 0 10%;
   }
 }
 
@@ -566,5 +580,37 @@ footer {
     padding: 0;
     margin: 0;
   }
+}
+
+/* ------------ PROJECTS ------------*/
+.project-description {
+  background-color: var(--card_background-1);
+  padding: 120px var(--section-padding-h) 20px var(--section-padding-h);
+}
+
+.project-title {
+  font-size: var(--title-font-size);
+  color: var(--card_headline);
+  padding: 20px 10px 50px 10px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.project-subsection {
+  font-size: var(--subtitle-font-size);
+  color: var(--card_headline);
+  padding: 10px 0;
+  margin: 0;
+}
+.project-paragraph {
+  font-size: var(--paragraph-font-size);
+  color: var(--card_paragraph);
+  padding: 10px 0;
+  margin: 0;
+}
+.project-animation {
+  background-color: var(--card_background-2);
+  padding: 20px var(--section-padding-h);
 }
 

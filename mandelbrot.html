@@ -1,63 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Maxime Munari</title>
     <link rel="stylesheet" href="style.css" />
     <script src="scripts/p5.min.js"></script>
-    <script src="scroll.js"></script>
-    <link rel="icon" href="images/favicon.svg" />
-    <script src="scripts/mathjax.js"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="icon" type="image/png" href="images/logos/favicon.png" />
   </head>
 
-  <header>
-    <div id="header-div">
-      <button onclick="navigateAndScroll('index.html', '#main-section', 150)">home</button>
-      <button onclick="navigateAndScroll('index.html', '#projects-section', 150)">projects</button>
-      <button onclick="navigateAndScroll('index.html', '#about-section', 150)">about</button>
-    </div>
-  </header>
-
   <body>
-    <section class="project-container">
-      <h1 class="project-title">The Mandelbrot Set</h1>
-      <hr class="project-hr" width="70%" />
-      <div class="project-text">
-        <h2 class="project-subtitle">What is the Mandelbrot Set?</h2>
-        <p class="project-text"></p>
-        <h2 class="project-subtitle">Plotting the Mandelbrot Set</h2>
+    <header>
+      <div class="navbar">
+        <ul class="links">
+          <li><a href="index.html#main-anchor">Home</a></li>
+          <li><a href="index.html#projects-anchor">Projects</a></li>
+          <li><a href="index.html#about-anchor">About</a></li>
+        </ul>
+        <div class="toggle-button">
+          <img src="images/logos/hamburger.svg" alt="dropdownmenu-icon" id="menu-icon" />
+        </div>
       </div>
-      <h2 class="project-subtitle">Simulation</h2>
-
-      <div id="project-animation-container">
-        <div class="project-animation" id="project-mandelbrot-animation"></div>
-        <div class="project-widgets" id="project-mandelbrot-widgets"></div>
+      <div class="dropdown-menu">
+        <div class="container-menu">
+          <h1 id="container-title">Menu</h1>
+          <li><a href="index.html#main-anchor">Home</a></li>
+          <li><a href="index.html#projects-anchor">Projects</a></li>
+          <li><a href="index.html#about-anchor">About</a></li>
+        </div>
       </div>
+    </header>
+    <script src="navbar.js"></script>
 
-      <script src="scripts/mandelbrot.js"></script>
-
-      <h2 class="project-subtitle">References</h2>
-      <ul id="project-references">
-        <li>
-          <a href="https://en.wikipedia.org/wiki/Ising_model">[1] Wikipedia: Ising model</a>
-        </li>
-        <li>
-          <a href="http://www.damtp.cam.ac.uk/user/tong/statphys.html"
-            >[2] David Tong: Lectures on Statistical Physics</a
-          >
-        </li>
-        <li>
-          <a href="https://en.wikipedia.org/wiki/Glauber_dynamics">[3] Wikipedia: Glauber Dynamics</a>
-        </li>
-      </ul>
+    <section class="project-description">
+      <h1 class="project-title">Mandelbrot Set</h1>
+      <h2 class="project-subsection">What is the mandelbrot set</h2>
+      <p class="project-paragraph">The Mandelbrot set is</p>
+      <h2 class="project-subsection">How to plot the mandelbrot set</h2>
+      <p class="project-paragraph">To plot the mandelbrot set you</p>
     </section>
-  </body>
 
-  <hr width="70%" style="background-color: white; height: 1px; border: none" />
-  <footer>
-    <p>No Copyright</p>
-    <p id="emoji">Made with &#9825; in HTML & CSS</p>
-    <audio id="music" src="portal.mp3"></audio>
-  </footer>
+    <section class="project-animation">
+      <h1 class="project-subsection">Animation</h1>
+      <div id="mandelbrot-animation"></div>
+    </section>
+
+    <footer>
+      <p>No Copyright</p>
+      <p id="emoji">Made with &#9825; in HTML & CSS</p>
+      <audio id="music" src="portal.mp3"></audio>
+    </footer>
+  </body>
 </html>
 
