@@ -17,7 +17,7 @@ function setup() {
   iterText = createDiv("");
 
   can.parent("project-mandelbrot-animation");
-
+  can.style("border-radius", "4pt");
   returnButton.parent("project-mandelbrot-widgets");
   resetButton.parent("project-mandelbrot-widgets");
   slider.parent("project-mandelbrot-widgets");

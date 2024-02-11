@@ -13,8 +13,8 @@ function setup() {
   frameRate(60);
   shift = 0;
 
-  buttonRun = createButton("RUN").mousePressed(start);
-  buttonReset = createButton("RESET").mousePressed(reset);
+  buttonRun = createButton("Play").mousePressed(start);
+  buttonReset = createButton("Clear").mousePressed(reset);
   sliderSpeed = createSlider(1, 60, 40, 1);
   sliderNbrCircles = createSlider(1, 2, 2, 1);
 
@@ -47,7 +47,7 @@ function draw() {
 
   speedText.html(
     '<span style="color: #fffffe;">' +
-      "Speed (fps):" +
+      "Speed (fps): " +
       "</span>" +
       '<span style="color: #7f5af0;">' +
       str(sliderSpeed.value()) +
