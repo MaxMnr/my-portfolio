@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Maxime Munari</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="scripts/p5.min.js"></script>
+    <link rel="icon" type="image/png" href="images/logos/favicon.png" />
+  </head>
+
+  <body>
+    <header>
+      <div class="navbar">
+        <ul class="links">
+          <li><a href="index.html#main-anchor">Home</a></li>
+          <li><a href="index.html#projects-anchor">Projects</a></li>
+          <li><a href="index.html#about-anchor">About</a></li>
+        </ul>
+        <div class="toggle-button">
+          <img src="images/logos/hamburger.svg" alt="dropdownmenu-icon" id="menu-icon" />
+        </div>
+      </div>
+      <div class="dropdown-menu">
+        <div class="container-menu">
+          <h1 id="container-title">Menu</h1>
+          <li><a href="index.html#main-anchor">Home</a></li>
+          <li><a href="index.html#projects-anchor">Projects</a></li>
+          <li><a href="index.html#about-anchor">About</a></li>
+        </div>
+      </div>
+    </header>
+    <script src="scripts/navbar.js"></script>
+
+    <section class="project-description">
+      <h1 class="project-title">Mandelbrot Set</h1>
+      <h2 class="project-subsection">What is the mandelbrot set</h2>
+      <p class="project-paragraph">The Mandelbrot set is</p>
+      <h2 class="project-subsection">How to plot the mandelbrot set</h2>
+      <p class="project-paragraph">To plot the mandelbrot set you</p>
+    </section>
+
+    <section class="project-animation">
+      <h1 class="project-subsection">Animation</h1>
+      <h2 class="project-subsubsection">Explore the mandelbrot set on your own.</h2>
+      <ul class="project-instructions">
+        <li>Select a zone to zoom into it.</li>
+        <li>Change the number of iterations using the slider.</li>
+        <li>Return to the previous zoom level using the "Return" button</li>
+        <li>Reset to the default zoom level using the "Reset" button</li>
+      </ul>
+
+      <div id="mandelbrot-animation">
+        <div class="project-animation" id="project-mandelbrot-animation"></div>
+        <div class="project-widgets" id="project-mandelbrot-widgets"></div>
+        <script src="scripts/mandelbrot.js"></script>
+      </div>
+    </section>
+
+    <footer>
+      <p>No Copyright</p>
+      <p id="emoji">Made with &#9825; in HTML & CSS</p>
+      <audio id="music" src="images/portal.mp3"></audio>
+    </footer>
+  </body>
+</html>
+

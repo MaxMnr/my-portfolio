@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Maxime Munari</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="scripts/p5.min.js"></script>
+    <link rel="icon" type="image/png" href="images/logos/favicon.png">
+  </head>
+
+  <body>
+    <header>
+      <div class="navbar">
+        <ul class="links">
+          <li><a href="#main-anchor">Home</a></li>
+          <li><a href="#projects-anchor">Projects</a></li>
+          <li><a href="#about-anchor">About</a></li>
+        </ul>
+        <div class="toggle-button">
+            <img src="images/logos/hamburger.svg" alt="dropdownmenu-icon" id="menu-icon"> 
+        </div>
+      </div>
+      <div class="dropdown-menu">
+        <div class="container-menu">
+            <h1 id="container-title">Menu</h1>
+            <li><a href="#main-anchor">Home</a></li>
+            <li><a href="#projects-anchor">Projects</a></li>
+            <li><a href="#about-anchor">About</a></li>
+        </div>
+      </div>
+    </header>
+    <script src="scripts/navbar.js"></script>
+
+    <section class="main-section" id="main-anchor">
+        <div id="background-animation"></div>
+        <div id="main-text">
+            <p id="text-top">Hi! My name is</p>
+            <p id="text-mid">Maxime MUNARI</p>
+            <p id="text-down">I am something of a </br> physicist/developer</p>
+        </div>
+        <script src="scripts/noise.js"></script>
+
+        <div class="scroll-down">
+            <a href="#projects-anchor">
+                <div class="scroll-down-text">&#x2193; Scroll &#x2193;</div>
+            </a>
+        </div>
+    </section>
+
+
+    <section class="projects-section" id="projects-anchor">
+        <h1 class="section-title">Projects</h1>
+        <div class="projects-grid">
+            <a href="mandelbrot.html" class="projects-card" id="project-1">
+                <div class="projects-card-title">Mandelbrot Set</div>
+                <div class="projects-card-description">Explore the mandelbrot set in an interactive way.</div>
+                <div class="projects-card-footer">footer</div>
+            </a>
+            <a href="fourier.html" class="projects-card" id="project-2">
+                <div class="projects-card-title">Fourier Drawing</div>
+                <div class="projects-card-description">A fun way to visualize Fourier Series.</div>
+                <div class="projects-card-footer">footer</div>
+            </a>
+            <a href="ising.html" class="projects-card" id="project-3">                
+                <div class="projects-card-title">Ising Model</div>
+                <div class="projects-card-description">Simulate the Ising Model and explore phase transitions in metals.</div>
+                <div class="projects-card-footer">footer</div>
+            </a>
+            <div class="projects-card" id="project-4">                
+                <div class="projects-card-title">Work in progress &#127959;</div>
+                <div class="projects-card-description">??</div>
+                <div class="projects-card-footer">??</div>
+            </div>
+    
+        </div>
+
+    </section>
+
+
+
+    <section class="about-section" id="about-anchor">
+        <h1 class="section-title">About me</h1>
+        <h2 class="subsection-title">Education</h2>
+        <div class="university-grid">
+            <div class="university-card" id="university-1"> 
+                <div id="university-card-container-text">             
+                    <div class="university-card-title">University Grenoble-Alpes</div>
+                    <div class="university-card-description">BSc in Physics (Research Track)</div>
+                    <div class="university-card-footer">2020-2023</div>
+                </div> 
+                <div id="university-card-container-image">
+                    <img src="images/logos/logo_uga.svg" alt="UGA-logo" id="uga-logo" style="width: 120px;"> 
+                </div>
+            </div>
+            <div class="university-card" id="university-2"> 
+                <div id="university-card-container-text">             
+                    <div class="university-card-title">University of Strasbourg</div>
+                    <div class="university-card-description">MSc in Physics (Theoretical Track)</div>
+                    <div class="university-card-footer">2023-today</div>
+                </div> 
+                <div id="university-card-container-image">
+                    <img src="images/logos/logo_unistra.svg" alt="UNISTRA-logo" id="unistra-logo" style="height: 60px;"> 
+                </div>
+            </div>
+        </div>
+
+        <h2 class="subsection-title">Experiences</h2>
+        <div class="experiences-grid">
+            <div class="experiences-card" id="experiences-1">                
+                <div class="experiences-card-title">Internship at Astrophysics Laboratory of Marseille</div>
+                <div class="experiences-card-description">---</div>
+                <div class="experiences-card-footer">June-July 2021</div>
+            </div>
+            <div class="experiences-card" id="experiences-2">                
+                <div class="experiences-card-title">Internship at Hubert Curien pluridisciplinary Institute</div>
+                <div class="experiences-card-description">--- </div>
+                <div class="experiences-card-footer">February-May 2024</div>
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>No Copyright</p>
+        <p id="emoji">Made with &#9825; in HTML & CSS</p>
+        <audio id="music" src="images/portal.mp3"></audio>
+    </footer>
+
+  </body>
+</html>
+

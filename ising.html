@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Maxime Munari</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="scripts/p5.min.js"></script>
+    <link rel="icon" type="image/png" href="images/logos/favicon.png" />
+  </head>
+
+  <body>
+    <header>
+      <div class="navbar">
+        <ul class="links">
+          <li><a href="index.html#main-anchor">Home</a></li>
+          <li><a href="index.html#projects-anchor">Projects</a></li>
+          <li><a href="index.html#about-anchor">About</a></li>
+        </ul>
+        <div class="toggle-button">
+          <img src="images/logos/hamburger.svg" alt="dropdownmenu-icon" id="menu-icon" />
+        </div>
+      </div>
+      <div class="dropdown-menu">
+        <div class="container-menu">
+          <h1 id="container-title">Menu</h1>
+          <li><a href="index.html#main-anchor">Home</a></li>
+          <li><a href="index.html#projects-anchor">Projects</a></li>
+          <li><a href="index.html#about-anchor">About</a></li>
+        </div>
+      </div>
+    </header>
+    <script src="scripts/navbar.js"></script>
+
+    <section class="project-description">
+      <h1 class="project-title">Ising Simulation</h1>
+      <h2 class="project-subsection">What is the Ising Model?</h2>
+      <p class="project-paragraph">...</p>
+      <h2 class="project-subsection">...</h2>
+      <p class="project-paragraph">...</p>
+    </section>
+
+    <section class="project-animation">
+      <h1 class="project-subsection">Animation</h1>
+      <h2 class="project-subsubsection">Ising simulation in a 2D metal</h2>
+      <ul class="project-instructions">
+        <li>Modify the temperature using the "Temperature" slider to observe the phase transition.</li>
+        <li>Change the size of the grid using the "Grid Size" slider.</li>
+        <li>Start/Pause the animation using dedicated button.</li>
+        <li>Reset the grid (randomize each site) using the "Reset" button.</li>
+      </ul>
+
+      <div id="mandelbrot-animation">
+        <div class="project-animation" id="project-ising-animation"></div>
+        <div class="project-widgets" id="project-ising-widgets"></div>
+        <script src="scripts/ising.js"></script>
+      </div>
+    </section>
+
+    <footer>
+      <p>No Copyright</p>
+      <p id="emoji">Made with &#9825; in HTML & CSS</p>
+      <audio id="music" src="images/portal.mp3"></audio>
+    </footer>
+  </body>
+</html>
+
