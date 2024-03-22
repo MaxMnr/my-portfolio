@@ -45,3 +45,35 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+function hover(id) {
+  let classes = [
+    ".experiences-card-title",
+    ".experiences-card-description",
+    ".experiences-card-footer",
+    ".experiences-card-paragraph",
+  ];
+  let element = document.getElementById(id);
+  for (let i = 0; i < classes.length - 1; i++) {
+    let div = element.querySelector(classes[i]);
+    div.style.display = "none";
+  }
+  let div = element.querySelector(classes[classes.length - 1]);
+  div.style.display = "block";
+}
+
+function leave(id) {
+  let classes = [
+    ".experiences-card-title",
+    ".experiences-card-description",
+    ".experiences-card-footer",
+    ".experiences-card-paragraph",
+  ];
+  let element = document.getElementById(id);
+  for (let i = 0; i < classes.length - 1; i++) {
+    let div = element.querySelector(classes[i]);
+    div.style.display = "block";
+  }
+  let div = element.querySelector(classes[classes.length - 1]);
+  div.style.display = "none";
+}
+

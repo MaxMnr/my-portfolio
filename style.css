@@ -499,21 +499,28 @@ section {
   color: var(--tertiary);
   margin: 0;
 }
+.experiences-card-paragraph {
+  position: relative;
+  overflow: hidden;
+  display: none;
+  transition: all 1s ease-in-out;
+}
 
 .experiences-card:hover {
-  background-color: var(--button);
-  transition: 0.4s ease-in-out;
-  .experiences-card-title {
-    color: var(--card_background-1);
-    transition: 0.4s ease-in-out;
-  }
+  background-color: var(--tertiary);
+  transition: all 0.4s ease-in-out;
   .experiences-card-description {
-    color: var(--card_headline);
-    transition: 0.5s ease-in-out;
+    display: none;
   }
   .experiences-card-footer {
-    color: var(--card_paragraph);
-    transition: 0.5s ease-in-out;
+    display: none;
+  }
+  .experiences-card-title {
+    display: none;
+  }
+  .experiences-card-paragraph {
+    color: #000000;
+    display: block;
   }
 }
 
@@ -719,6 +726,53 @@ footer {
 }
 
 #mandelbrot-description {
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--card_paragraph);
+}
+
+/* ------------ MANDELBROT ------------*/
+
+.container {
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  grid-template-rows: 8fr 1fr;
+  gap: 0px 10px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "project-solarsystem-animation project-solarsystem-widgets-secondary"
+    "project-solarsystem-widgets-main .";
+}
+#project-solarsystem-animation {
+  grid-area: project-solarsystem-animation;
+}
+
+#project-solarsystem-widgets-main {
+  grid-area: project-solarsystem-widgets-main;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#project-solarsystem-widgets-secondary {
+  grid-area: project-solarsystem-widgets-secondary;
+}
+
+#solarsystem-animation {
+}
+
+#project-solarsystem-widgets {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#solarsystem-description {
   display: flex;
   justify-content: center;
   align-items: left;

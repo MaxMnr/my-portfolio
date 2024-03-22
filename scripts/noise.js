@@ -20,7 +20,7 @@ function draw() {
   let mouse_x = mouseX - width / 2;
   let mouse_y = mouseY - height / 2;
   let r_min = map(mouse_x ** 2 + mouse_y ** 2, 0, (width ** 2 + height ** 2) / 2, 100, 200);
-  let r_max = map(mouse_x ** 2 + mouse_y ** 2, 0, (width ** 2 + height ** 2) / 2, 200, height / 2);
+  let r_max = map(mouse_x ** 2 + mouse_y ** 2, 0, (width ** 2 + height ** 2) / 2, 200, height);
   r_min = constrain(r_min, 100, 200);
   r_max = constrain(r_max, 200, 400);
   let dangle = 0.1;
@@ -31,7 +31,7 @@ function draw() {
 
     // Calculate the noise value at that position
     let r = map(noise(x_, y_, z_), 0, 1, r_min, r_max);
-    r = constrain(r, r_min, r_max);
+    r = constrain(r, 0, height);
     // Convert to cartesian coordinates
     let x = r * cos(angle);
     let y = r * sin(angle);
