@@ -51,9 +51,21 @@
         <li>Clear the canvas using the "Clear" button</li>
       </ul>
 
-      <div id="mandelbrot-animation">
-        <div class="project-animation" id="project-fourier-animation"></div>
-        <div class="project-widgets" id="project-fourier-widgets"></div>
+      <div class="embedding-screen">
+        <div class="embedding-head">
+          <h1 id="embedding-title">fourier.js</h1>
+          <div id="embedding-close-buttons">
+            <button class="embedding-button" id="embedding-button-1"></button>
+            <button class="embedding-button" id="embedding-button-2"></button>
+            <button class="embedding-button" id="embedding-button-3"></button>
+          </div>
+        </div>
+        <hr id="embedding-hr" />
+        <div class="embedding-body">
+          <div class="project-widgets" id="project-fourier-widgets"></div>
+          <hr id="embedding-hr" />
+          <div class="project-animation" id="project-fourier-animation"></div>
+        </div>
         <script src="scripts/fourier.js"></script>
       </div>
     </section>

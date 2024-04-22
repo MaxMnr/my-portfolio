@@ -11,25 +11,28 @@
 
   <body>
     <header>
-      <div class="navbar">
-        <ul class="links">
-          <li><a href="#main-anchor">Home</a></li>
-          <li><a href="#projects-anchor">Projects</a></li>
-          <li><a href="#about-anchor">About</a></li>
-        </ul>
-        <div class="toggle-button">
+        <div class="navbar">
+          <ul class="links">
+            <li><a href="#main-anchor">Home</a></li>
+            <li><a href="#projects-anchor">Projects</a></li>
+            <li><a href="#about-anchor">About</a></li>
+          </ul>
+          <div class="toggle-button">
             <img src="images/logos/hamburger.svg" alt="dropdownmenu-icon" id="menu-icon"> 
+          </div>
         </div>
-      </div>
-      <div class="dropdown-menu">
-        <div class="container-menu">
+
+        
+        <div class="dropdown-menu">
+          <div class="container-menu">
             <h1 id="container-title">Menu</h1>
             <li><a href="#main-anchor">Home</a></li>
             <li><a href="#projects-anchor">Projects</a></li>
             <li><a href="#about-anchor">About</a></li>
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+      
     <script src="scripts/navbar.js"></script>
 
     <section class="main-section" id="main-anchor">
@@ -40,7 +43,7 @@
             <p id="text-down">I am something of a </br> physicist/developer</p>
         </div>
         <script src="scripts/noise.js"></script>
-
+    
         <div class="scroll-down">
             <a href="#projects-anchor">
                 <div class="scroll-down-text">&#x2193; Scroll &#x2193;</div>
@@ -55,23 +58,29 @@
             <a href="mandelbrot.html" class="projects-card" id="project-1">
                 <div class="projects-card-title">Mandelbrot Set</div>
                 <div class="projects-card-description">Explore the mandelbrot set in an interactive way.</div>
-                <div class="projects-card-footer">2022</div>
+                <div class="projects-card-footer"></div>
             </a>
-            <a href="fourier.html" class="projects-card" id="project-2">
+            <a href="gol.html" class="projects-card" id="project-2">                
+                <div class="projects-card-title">Game Of Life</div>
+                <div class="projects-card-description">Discover and play Conway's Game Of Life.</div>
+                <div class="projects-card-footer"></div>
+            </a>
+            <a href="fourier.html" class="projects-card" id="project-3">
                 <div class="projects-card-title">Fourier Drawing</div>
                 <div class="projects-card-description">A fun way to visualize Fourier Series.</div>
-                <div class="projects-card-footer">2022</div>
+                <div class="projects-card-footer"></div>
             </a>
-            <a href="ising.html" class="projects-card" id="project-3">                
+            <a href="ising.html" class="projects-card" id="project-4">                
                 <div class="projects-card-title">Ising Model</div>
                 <div class="projects-card-description">Simulate the Ising Model and explore phase transitions in metals.</div>
-                <div class="projects-card-footer">2024</div>
+                <div class="projects-card-footer"></div>
             </a>
-            <div class="projects-card" id="project-4">                
+
+            <a class="projects-card" id="project-5">                
                 <div class="projects-card-title">Work in progress &#127959;</div>
-                <div class="projects-card-description">??</div>
-                <div class="projects-card-footer">??</div>
-            </div>
+                <div class="projects-card-description">?</div>
+                <div class="projects-card-footer"></div>
+            </a>
     
         </div>
 

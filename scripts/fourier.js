@@ -8,8 +8,13 @@ let mouseDown;
 let shift;
 
 function setup() {
-  let can = createCanvas(windowWidth * 0.5, windowHeight * 0.7);
+  let canvasDiv = document.getElementById("project-fourier-animation");
+  let w = canvasDiv.offsetWidth;
+  let h = canvasDiv.offsetHeight;
+  let can = createCanvas(w, int(w / 2));
+
   can.parent("project-fourier-animation");
+
   frameRate(60);
   shift = 0;
 
@@ -42,7 +47,8 @@ function setup() {
 }
 
 function draw() {
-  background(0);
+  background("#16161a");
+  //background(0);
   frameRate(sliderSpeed.value());
 
   speedText.html(
@@ -246,5 +252,11 @@ class Circle {
     circle(this.pos.x, this.pos.y, 2 * this.rad);
     pop();
   }
+}
+
+function resizeCanvasToFitParent() {
+  let parentWidth = document.getElementById("project-fourier-animation").clientWidth;
+  let parentHeight = document.getElementById("project-fourier-animation").clientHeight;
+  resizeCanvas(parentWidth, parentHeight);
 }
 

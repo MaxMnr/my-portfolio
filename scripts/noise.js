@@ -9,8 +9,8 @@ function setup() {
 function draw() {
   background("#16161a");
   translate(width / 2, height / 2);
-  stroke("#94a1b2");
-  strokeWeight(1.5);
+  stroke("#242629");
+  strokeWeight(2);
 
   beginShape();
   fill("#7f5af0");

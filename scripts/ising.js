@@ -10,13 +10,16 @@ let T;
 let run = 0;
 
 function setup() {
-  let can = createCanvas(windowHeight * 0.8, windowHeight * 0.8);
+  let canvasDiv = document.getElementById("project-ising-animation");
+  let w = canvasDiv.offsetWidth;
+  let h = canvasDiv.offsetHeight;
+  let can = createCanvas(w, w / 2);
   can.parent("project-ising-animation");
 
   buttonStart = createButton("Start").mousePressed(startB);
   buttonReset = createButton("Reset").mousePressed(reset);
   sliderTemp = createSlider(0.1, 5, 2.27, 0.01);
-  sliderRes = createSlider(10, 100, 20, 1);
+  sliderRes = createSlider(10, 100, 10, 1);
 
   tempText = createDiv("");
   resText = createDiv("");
@@ -37,7 +40,7 @@ function setup() {
 
   frameRate(20);
   res = int(sliderRes.value());
-  col = res;
+  col = 2 * res;
   row = res;
   grid = [];
   for (let i = 0; i < row + 1; i++) {
@@ -59,7 +62,7 @@ function startB() {
 function resetup() {
   grid = [];
   res = sliderRes.value();
-  col = res;
+  col = 2 * res;
   row = res;
 
   for (let i = 0; i < row + 1; i++) {
@@ -124,20 +127,21 @@ function draw() {
       if (grid[i][j] == -1) {
         stroke("#7f5af0");
         noFill();
-        circle(j * w, i * h, w / 2);
+        circle(j * w, i * h, min(w, h) / 2);
         point(j * w, i * h);
       }
       if (grid[i][j] == 1) {
         stroke("#2cb67d");
-        cross(j * w, i * h, w / 2);
+        cross(j * w, i * h, min(w, h) / 2);
       }
       //point(j * res + res/2, i * res + res/2)
       pop();
 
-      let TL = grid[i][j];
-      let TR = grid[i][mod(j + 1, grid.length)];
-      let DR = grid[mod(i + 1, grid[0].length)][mod(j + 1, grid.length)];
-      let DL = grid[mod(i + 1, grid[0].length)][j];
+      // Accessing neighboring cells
+      let TL = grid[i][j]; // Current cell
+      let TR = j < col ? grid[i][j + 1] : undefined; // Right neighbor
+      let DR = i < row && j < col ? grid[i + 1][j + 1] : undefined; // Bottom-right neighbor
+      let DL = i < row ? grid[i + 1][j] : undefined; // Bottom neighbor
 
       let squareType = getSquareType(TL, TR, DR, DL);
 
