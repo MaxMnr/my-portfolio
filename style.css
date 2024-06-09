@@ -507,7 +507,8 @@ section {
 
 .experiences-card:hover {
   background-color: var(--tertiary);
-  transition: all 0.4s ease-in-out;
+  transition: all 0s ease-in-out;
+  padding: 10px 40px;
   .experiences-card-description {
     display: none;
   }
@@ -520,6 +521,21 @@ section {
   .experiences-card-paragraph {
     color: #000000;
     display: block;
+  }
+  .experiences-card-paragraph em {
+    font-size: var(--subsubtitle-font-size);
+    color: #000000;
+    margin: 0px 0px;
+    margin-bottom: 100px;
+  }
+  .experiences-card-paragraph .experiences-card-paragraph-desc {
+    color: var(--card_headline);
+    margin: 10px 0px;
+  }
+  .experiences-card-paragraph li {
+    color: var(--card_headline);
+    padding: 0px;
+    list-style-type: "\2192  ";
   }
 }
 
