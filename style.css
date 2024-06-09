@@ -866,6 +866,15 @@ footer {
   background-color: #2cb67d00;
 }
 
+.select {
+  padding: 10px;
+  border: 1px solid #4E3232;
+  border-radius: 20px;
+  -webkit-appearance: none; 
+  -moz-appearance: none;
+  appearance: none; 
+}
+
 .embedding-screen {
   display: flex;
   justify-content: center;
