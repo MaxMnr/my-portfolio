@@ -674,16 +674,16 @@ footer {
   align-self: center;
   color: var(--card_paragraph);
   font-size: 12pt;
-  padding-top: 50px;
+  padding-top: 10px;
 }
 #project-description ul {
   width: 70%;
-  margin: 10px 0px;
+  margin: 5px 0px;
 }
 #project-description li {
   color: var(--card_paragraph);
   list-style-type: "\2192  ";
-  margin: 10px 50px;
+  margin: 0px 10px;
 }
 
 #project-animation {
